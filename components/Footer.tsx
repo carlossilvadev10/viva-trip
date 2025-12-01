@@ -10,7 +10,7 @@ type FooterColumnProps = {
 
 const FooterColumn = ({ title, children }: FooterColumnProps) => {
     return (
-        <div className = "flex flex-col gap-4">
+        <div className = "flex flex-col gap-4 text-center sm:text-left items-center sm:items-start">
             <h4 className = "bold-18 whitespace-nowrap">
                 {title}
             </h4>
@@ -23,8 +23,8 @@ const Footer = () => {
     return (
         <footer className = "flexCenter py-16 bg-pattern bg-cover bg-center bg-no-repeat">
             <div className = "flex flex-col rounded-xl w-full max-w-6xl px-4">
-                <div className = "flex flex-col md:flex-row items-start justify-center p-8 gap-[10%] bg-primary rounded-t-xl">
-                    <div className = "flex flex-wrap gap-6 sm:justify-between md:flex-1">
+                <div className = "flex flex-col md:flex-row items-center sm:items-start justify-center p-8 gap-[10%] bg-primary rounded-t-xl">
+                    <div className = "flex flex-wrap gap-6 justify-center sm:justify-between md:flex-1">
                         {
                             footerLinks.map((col, i) => (
                                 <FooterColumn key = {i} title = {col.title}>
@@ -42,7 +42,7 @@ const Footer = () => {
                             <FooterColumn title = {footerContactInfo.title}>
                                 {
                                     footerContactInfo.links.map((link, i) => (
-                                        <a key = {i} href = {link.label === "Correo electrónico" ? `mailto:${link.value}` : `tel:${link.value.replace(/\s/g, '')}`} className = "flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4 hover:text-gray-30 transition-all duration-300">
+                                        <a key = {i} href = {link.label === "Correo electrónico" ? `mailto:${link.value}` : `tel:${link.value.replace(/\s/g, '')}`} className = "flex flex-col md:flex-row items-center sm:items-start md:items-center gap-1 md:gap-4 hover:text-gray-30 transition-all duration-300">
                                             <span className = "text-sm text-gray-20">
                                                 {link.label}:
                                             </span>
@@ -56,7 +56,7 @@ const Footer = () => {
                         </div>
                         <div className = "flex">
                             <FooterColumn title = {socials.title}>
-                                <ul className = "flex gap-4">
+                                <ul className = "flex gap-4 justify-center sm:justify-start">
                                     {
                                         socials.links.map((link, i) => {
                                             const socialName = link.split('/').pop()?.split('.')[0] || 'social';

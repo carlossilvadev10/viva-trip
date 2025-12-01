@@ -16,10 +16,10 @@ type TestimonialItemProps= {
 
 const TestimonialItem = ({ title, profession, URL, desc }: TestimonialItemProps) => {
     return (
-        <div className = "my-8 rounded-md z-10">
-            <div className = "pb-6">
-                <Image src = {URL} alt = {`img${title}`} width = {77} height = {77} className = "rounded-full mb-2" />
-                <div className = "">
+        <div className = "my-8 rounded-md z-10 text-center xl:text-left">
+            <div className = "pb-6 flex flex-col items-center xl:items-start">
+                <Image src = {URL} alt = {`Imagen de ${title}`} width = {77} height = {77} className = "rounded-full mb-2" />
+                <div>
                     <div className = "medium-20 text-secondary">
                         {title}
                     </div>
@@ -28,10 +28,10 @@ const TestimonialItem = ({ title, profession, URL, desc }: TestimonialItemProps)
                     </div>
                 </div>
             </div>
-            <span className = "text-3xl">
+            <span className = "text-3xl flex justify-center xl:justify-start">
                 <FaQuoteLeft />
             </span>
-            <p className = "max-w-xl pt-3 text-gray-50">
+            <p className = "max-w-xl pt-3 text-gray-50 mx-auto xl:mx-0">
                 {desc}
             </p>
         </div>
@@ -57,14 +57,14 @@ const Testimonial = () => {
     return (
         <section className = "max_padd_container py-16 bg-white relative" id = "testimonials">
             <div className = "grid grid-cols-1 xl:grid-cols-2 gap-4">
-                <div className = "">
+                <div className = "text-center xl:text-left">
                     <h4 className = "uppercase bold-18 text-secondary">
                         Experiencias inolvidables
                     </h4>
-                    <h3 className = "h3 capitalize max-w-lg">
+                    <h3 className = "h3 capitalize xl:max-w-lg">
                         Opiniones de nuestros viajeros
                     </h3>
-                    <div className = "max-w-[666px]">
+                    <div className = "xl:max-w-[666px]">
                         <Slider {...settings}>
                             {
                                 testimonials.map((testimonial, i) => (
